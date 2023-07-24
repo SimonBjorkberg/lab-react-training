@@ -4,6 +4,7 @@ import Greetings from './components/Greeting';
 import IdCard from './components/IdCard';
 import Random from './components/Random';
 import CreditCard from './components/CreditCard';
+import Ratings from './components/Ratings';
 
 function App() {
   return (
@@ -63,6 +64,14 @@ function App() {
         bgColor="#ddbb55"
         color="white"
       />
+      <div className="flex flex-col items-center">
+        <Ratings>0</Ratings>
+        <Ratings>1.49</Ratings>
+        <Ratings>1.5</Ratings>
+        <Ratings>3</Ratings>
+        <Ratings>4</Ratings>
+        <Ratings>5</Ratings>
+      </div>
     </div>
   );
 }

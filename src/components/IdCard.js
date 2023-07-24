@@ -1,8 +1,6 @@
 const IdCard = (props) => {
   const { lastName, firstName, gender, height, birth, picture } = props;
 
-  console.log(birth.toLocaleString());
-
   return (
     <div className="id-card flex m-2 border border-black p-2">
       <div>

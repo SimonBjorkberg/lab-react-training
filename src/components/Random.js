@@ -2,7 +2,6 @@ const Random = (props) => {
   const { min, max } = props;
 
   const randomNumber = Math.floor(Math.random(min) * max);
-  console.log(randomNumber);
 
   return (
     <div className="random-number">
