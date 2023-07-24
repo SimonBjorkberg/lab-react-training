@@ -3,15 +3,14 @@ import { useState } from 'react'
 const LikeButton = () => {
 
     const colors = ['purple','blue','green','yellow','orange','red'];
+    const randomNum = Math.floor(Math.random() * colors.length)
 
     const [ color, setColor ] = useState(colors[0])
     const [ counter, setCounter ] = useState(0)
     const backgroundColor = color;
 
     function updateButton() {
-        const randomColor = Math.floor(Math.random() * colors.length)
-        console.log(color)
-        setColor(colors[randomColor])
+        setColor(colors[randomNum])
         setCounter(counter + 1)
     }
 
