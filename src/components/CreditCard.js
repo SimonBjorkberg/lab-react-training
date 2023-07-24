@@ -17,10 +17,11 @@ const CreditCard = (props) => {
 
   return (
     <div
-      className="credit-card rounded-md w-72 h-36 my-5 mx-auto"
+      className="credit-card rounded-md w-72 h-36 my-5 mx-auto flex flex-col"
       style={{ backgroundColor: `${bgColor}`, color: `${color}` }}
     >
-      <p className="text-right mr-3 text-2xl italic">{type}</p>
+      {type === 'Visa' && <img src={visaLogo} alt="Logo" className='w-14 mr-3 mt-3 self-end' />  }
+      {type === 'Master Card' && <p className="text-right mr-3 text-2xl italic">{type}</p>}
       <p className="text-2xl mt-3">{hiddenNumbers}</p>
       <div className="flex mt-2">
         <p className="mx-6">
