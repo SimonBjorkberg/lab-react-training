@@ -8,9 +8,6 @@ const NumbersTable = (props) => {
     <div className="numbers-table p-5 w-[450px] mx-auto">
       <table className="w-full">
         <thead>
-          <tr>
-            <th className="border px-4 py-2">Number</th>
-          </tr>
         </thead>
         <tbody>
           <tr className="flex flex-wrap">
