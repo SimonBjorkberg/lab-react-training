@@ -6,15 +6,9 @@ const Carousel = (props) => {
 
   function changeImg(value) {
     if (value === '+') {
-      setCounter(counter + 1);
-      if (images[counter + 1] === undefined) {
-        setCounter(0);
-      }
+      images[counter + 1] === undefined ? setCounter(0) : setCounter(counter + 1);
     } else {
-      setCounter(counter - 1);
-      if (images[counter - 1] === undefined) {
-        setCounter(images.length - 1);
-      }
+      images[counter - 1] === undefined ? setCounter(images.length - 1) : setCounter(counter - 1);
     }
   }
 
@@ -23,10 +17,10 @@ const Carousel = (props) => {
       <img src={images[counter]} alt="" className="mx-auto" />
       <div className="flex justify-center">
         <button className="mx-2" onClick={() => changeImg()}>
-          Prev
+          Left
         </button>
         <button className="mx-2" onClick={() => changeImg('+')}>
-          Next
+          Right
         </button>
       </div>
     </div>
