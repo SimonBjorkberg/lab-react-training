@@ -7,8 +7,6 @@ const NumbersTable = (props) => {
   return (
     <div className="numbers-table p-5 w-[450px] mx-auto">
       <table className="w-full">
-        <thead>
-        </thead>
         <tbody>
           <tr className="flex flex-wrap">
             {numArray.map((number) => (
