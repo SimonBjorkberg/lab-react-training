@@ -1,5 +1,12 @@
 const FacebookSort = (props) => {
-    const { sort } = props
+    const { profiles, setProfiles } = props
+
+    function sort(e) {
+        const sortValue = e.target.value;
+        profiles.sort((a, b) => a[sortValue].localeCompare(b[sortValue]));
+        setProfiles([...profiles]);
+      }
+
     return ( <div className="sort mb-10">
     <h1>
         Sort via:

@@ -1,14 +1,21 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const FacebookProfiles = (props) => {
-  const { profiles, showInfo } = props;
+  const { profiles, setProfiles } = props;
+
+  function showInfo(profile) {
+    profile.showInfo === true
+      ? (profile.showInfo = false)
+      : (profile.showInfo = true);
+    setProfiles([...profiles]);
+  }
 
   return (
-    <div>
+    <div className='grid grid-cols-5'>
       {profiles.map((profile) => {
         return (
           <div
-            className={`profile flex text-left border border-black p-1 ${profile.showInfo ? 'w-[350px]' : 'w-[122px]'} mx-auto mb-2 ${
+            className={`profile flex text-left border border-black p-2 ${profile.showInfo ? 'w-[350px]' : 'w-[122px]'} mx-auto mb-2 ${
               profile.toggle && 'bg-blue-300'
             }`}
             key={uuidv4()}

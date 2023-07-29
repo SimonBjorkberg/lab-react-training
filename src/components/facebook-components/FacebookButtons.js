@@ -1,15 +1,28 @@
 const FacebookButtons = (props) => {
 
-    const { filter } = props
+    const { profiles, setProfiles } = props
+
+    function filter(e) {
+      const filterValue = e.target.value.toLowerCase();
+      const arrayCopy = [...profiles];
+      arrayCopy.forEach((profile) => {
+        if (profile.country.toLowerCase() === filterValue) {
+          profile.toggle = true;
+        } else {
+          profile.toggle = false;
+        }
+      });
+      setProfiles(arrayCopy);
+    }
 
   return (
     <div className="my-10 flex justify-between w-1/3 mx-auto bg-neutral-400 px-8 py-4">
       <button
-        value={'All'}
+        value={'None'}
         onClick={(e) => filter(e)}
         className="py-2 px-3 bg-blue-300 rounded hover:bg-blue-200"
       >
-        All
+        None
       </button>
       <button
         value={'England'}
